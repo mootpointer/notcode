@@ -1,0 +1,84 @@
+@charset "utf-8";
+@import "bourbon";
+@import "neat";
+
+.background {
+  background-image: image-url("bg.jpg");
+  @include position(fixed, 0 0 0 0);
+  background-size: cover;
+  background-position: 50% 50%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+$archer: 'Archer SSm A', 'Archer SSm B';
+$verlag: 'Verlag A', 'Verlag B';
+
+header {
+  margin-top: 160px;
+  padding: 1em;
+  font-family: $archer;
+  font-weight: 800;
+  h1 {
+    font-size: 3em;
+    font-style: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .subtitle {
+    font-style: italic
+  }
+}
+
+article {
+  padding: 1em;
+  margin: 40px 0;
+  h2 {
+    font-family: $archer;
+    margin: 0 0 0.25em 0;
+  }
+
+  .guests {
+    font-family: $archer;
+    font-style: italic;
+  }
+
+  .summary {
+    margin: 0.75em 0;
+    font-family: $verlag;
+    font-size: 1.2em;
+  }
+
+  .actions {
+    display: none;
+    a {
+      background-color: #EAB006;
+      display: inline-block;
+      padding: 0.5em;
+      margin-right: 1em;
+      color: black;
+      text-decoration: none;
+      font-family: $verlag;
+      font-weight: 700;
+    }
+  }
+}
+
+
+h1, .subtitle, .details, .actions {
+  @include span-columns(8);
+  @include shift(2);
+  @include omega();
+}
+
+header, article.episode {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  color: white;
+}
+
+.titles, .ep {
+  @include outer-container();
+  z-index: 1;
+}
+
