@@ -71,6 +71,14 @@ article {
       text-decoration: underline;
     }
   }
+  a {
+    color: $yellow;
+    text-decoration: none;
+  }
+  a:hover {
+    background-color: $yellow;
+    color: black;
+  }
 
   .guests {
     font-family: $archer;
