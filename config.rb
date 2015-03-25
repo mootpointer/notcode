@@ -65,7 +65,7 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
-page '/podcast.rss', :layout => false
+page '/podcast.rss', :layout => false, :directory_index => false
 
 activate :sync do |sync|
   sync.fog_provider = "AWS"
@@ -83,7 +83,7 @@ activate :blog do |blog|
   blog.summary_separator = /END_SUMMARY/
 end
 
-
+activate :directory_indexes
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
