@@ -65,6 +65,8 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+page '/podcast.rss', :layout => false
+
 activate :sync do |sync|
   sync.fog_provider = "AWS"
   sync.fog_directory = "notco.de"
