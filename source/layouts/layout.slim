@@ -16,10 +16,10 @@ html
       ga('send', 'pageview');
       link rel="alternate" type="application/rss+xml" title="Not Code Podcast RSS" href="http://podcast.notco.de"
 
-      og:url = "http://notco.de/" + current_page.url
-      og:title = current_page.data.title || "Not Code."
-      og:description = current_page.responds_to?(:summary) current_page.summary : "A podcast for tech people about everything but code."
-      og:site_name = "Not Code."
+    og:url = "http://notco.de/" + current_page.url
+    og:title = current_page.data.title || "Not Code."
+    og:description = current_page.responds_to?(:summary) current_page.summary : "A podcast for tech people about everything but code."
+    og:site_name = "Not Code."
 
   body
     header
