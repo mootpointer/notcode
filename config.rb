@@ -48,7 +48,7 @@ helpers do
 
   def strip_tags text
     doc = Nokogiri::HTML::DocumentFragment.parse text
-    doc.text.gsub("\n", "")
+    escape_html(doc.text.gsub("\n", ""))
   end
 end
 
