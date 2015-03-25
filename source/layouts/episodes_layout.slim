@@ -7,3 +7,5 @@
           .guests = current_article.data.guests
           .summary
             = yield
+          .actions
+            = link_to "Download", current_article.data.media_url

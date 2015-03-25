@@ -99,7 +99,7 @@ article {
 
 
 
-h1, .subtitle, .details, .actions, nav, .content {
+h1, .subtitle, .details, .index .actions, nav, .content {
   @include span-columns(8);
   @include shift(2);
   @include omega();
