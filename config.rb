@@ -72,6 +72,8 @@ activate :sync do |sync|
   sync.fog_directory = "notco.de"
   sync.aws_access_key_id =  ENV['AWS_ACCESS_KEY_ID']
   sync.aws_secret_access_key =  ENV['AWS_SECRET_ACCESS_KEY']
+  sync.after_build = true
+  sync.gzip_compression = true
 end
 
 activate :blog do |blog|
