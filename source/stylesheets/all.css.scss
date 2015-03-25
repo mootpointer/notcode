@@ -25,6 +25,13 @@ header {
     font-style: normal;
     margin-top: 0;
     margin-bottom: 0;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   }
   .subtitle {
     font-style: italic
