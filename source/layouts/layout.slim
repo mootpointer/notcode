@@ -42,6 +42,10 @@ html
               = current_or_link "About", "/about.html"
             li
               = current_or_link "RSS", "http://podcast.notco.de"
+            li
+              = link_to "iTunes", "https://itunes.apple.com/au/podcast/not-code./id979828204", target: "_blank"
+            li
+              = link_to "Twitter", "https://twitter.com/notcode", target: "_blank"
 
     = yield
     .background
