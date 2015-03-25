@@ -8,6 +8,4 @@ main
           .guests =  episode.data.guests
           .summary = episode.summary
         .actions
-          link_to "Download", episode.data.media_url
-          a href="#" Listen
-          a href="#" Show Notes
+          = link_to "Show Notes", episode
