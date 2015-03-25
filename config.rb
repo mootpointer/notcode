@@ -1,3 +1,4 @@
+Dotenv.load
 ###
 # Compass
 ###
@@ -32,6 +33,22 @@
 # Helpers
 ###
 
+helpers do
+  def current_or_link text, path, opts={}
+    if current_page? path
+      content_tag :span, text, class: "current"
+    else
+      link_to text, path
+    end
+  end
+
+  def current_page? path
+    url_for(path) == url_for(current_page.url)
+  end
+
+end
+
+
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
@@ -41,17 +58,27 @@
 # end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
 
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+
+activate :sync do |sync|
+  sync.fog_provider = "AWS"
+  sync.fog_directory = "notco.de"
+  sync.aws_access_key_id =  ENV['AWS_ACCESS_KEY_ID']
+  sync.aws_secret_access_key =  ENV['AWS_SECRET_ACCESS_KEY']
+end
+
+activate :blog do |blog|
+  blog.prefix = "episodes"
+  blog.permalink = "{year}/{title}.html"
+  blog.layout = "episodes_layout"
+  blog.summary_separator = /END_SUMMARY/
+end
+
 
 # Build-specific configuration
 configure :build do

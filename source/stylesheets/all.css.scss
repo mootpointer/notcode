@@ -13,6 +13,7 @@
 
 $archer: 'Archer SSm A', 'Archer SSm B';
 $verlag: 'Verlag A', 'Verlag B';
+$yellow: #EAB006;
 
 header {
   margin-top: 160px;
@@ -28,6 +29,25 @@ header {
   .subtitle {
     font-style: italic
   }
+  nav {
+    padding-top: 1em;
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline-block;
+      background-color: $yellow;
+      padding: 0.5em;
+      margin-right: 1em;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+      font-family: $verlag;
+      font-weight: 700;
+    }
+  }
 }
 
 article {
@@ -36,6 +56,13 @@ article {
   h2 {
     font-family: $archer;
     margin: 0 0 0.25em 0;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   .guests {
@@ -43,7 +70,7 @@ article {
     font-style: italic;
   }
 
-  .summary {
+  .summary, p {
     margin: 0.75em 0;
     font-family: $verlag;
     font-size: 1.2em;
@@ -52,7 +79,7 @@ article {
   .actions {
     display: none;
     a {
-      background-color: #EAB006;
+      background-color: $yellow;
       display: inline-block;
       padding: 0.5em;
       margin-right: 1em;
@@ -65,19 +92,20 @@ article {
 }
 
 
-h1, .subtitle, .details, .actions {
+
+h1, .subtitle, .details, .actions, nav, .content {
   @include span-columns(8);
   @include shift(2);
   @include omega();
 }
 
-header, article.episode {
+header, article {
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   color: white;
 }
 
-.titles, .ep {
+.titles, .ep, section {
   @include outer-container();
   z-index: 1;
 }

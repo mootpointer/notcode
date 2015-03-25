@@ -1,17 +1,13 @@
-header
-  .titles
-    h1 Not Code.
-    .subtitle A podcast for tech people about everything but code.
-
 main
-  article.episode
-    .ep
-      .details
-        h2 Episode 1: Coming Soon
-        .guests Andrew Harvey
-        .summary In which I introduce the idea behind Not Code.
-      .actions
-        a href="#" Download
-        a href="#" Listen
-        a href="#" Show Notes
-.background
+  - blog.articles[0..5].each do |episode|
+    article.episode
+      .ep
+        .details
+          h2 
+            = link_to episode.title, episode
+          .guests =  episode.data.guests
+          .summary = episode.summary
+        .actions
+          link_to "Download", episode.data.media_url
+          a href="#" Listen
+          a href="#" Show Notes
