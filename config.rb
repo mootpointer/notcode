@@ -46,6 +46,10 @@ helpers do
     url_for(path) == url_for(current_page.url)
   end
 
+  def strip_tags text
+    doc = Nokogiri::HTML::DocumentFragment.parse text
+    doc.text
+  end
 end
 
 

@@ -1,6 +1,11 @@
 doctype html
 html
   head
+    meta property="og:url" content="#{"http://notco.de/" + current_page.url}"
+    meta property="og:title" content="#{current_page.data.title || "Not Code."}"
+    meta property="og:description" content="#{current_page.respond_to?(:summary) ? strip_tags(current_page.summary) : "A podcast for tech people about everything but code."}"
+    meta property="og:site_name" content="Not Code."
+    meta property="og:image" content="http://notco.de/#{image_path("logo-large.png")}"
     meta charset="utf-8"
     title = current_page.data.title ? "Not code. | #{current_page.data.title}" : "Not code."
     link rel="stylesheet" type="text/css" href="//cloud.typography.com/7444872/783526/css/fonts.css"
@@ -16,10 +21,6 @@ html
       ga('send', 'pageview');
       link rel="alternate" type="application/rss+xml" title="Not Code Podcast RSS" href="http://podcast.notco.de"
 
-    og:url = "http://notco.de/" + current_page.url
-    og:title = current_page.data.title || "Not Code."
-    og:description = current_page.responds_to?(:summary) current_page.summary : "A podcast for tech people about everything but code."
-    og:site_name = "Not Code."
 
   body
     header
