@@ -9,3 +9,4 @@
             = yield
           .actions
             = link_to "Download", current_article.data.media_url
+            = partial(:player, locals: {media_url: current_article.data.media_url})
