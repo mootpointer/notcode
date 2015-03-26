@@ -448,7 +448,10 @@
 
 .sm2-progress-bd {
   width: 100%;
-  @include position(absolute, null 0 0 0);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
 }
 
