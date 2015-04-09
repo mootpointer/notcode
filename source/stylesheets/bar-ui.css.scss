@@ -15,8 +15,6 @@
  font-smoothing: antialiased;
  text-rendering: optimizeLegibility;
  max-width: 5em;
- /* take out overflow if you want an absolutely-positioned playlist dropdown. */
- overflow: hidden;
  /* just for fun (animate normal / full-width) */
  transition: max-width 0.2s ease-in-out;
 }
