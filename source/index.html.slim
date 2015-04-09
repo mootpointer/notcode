@@ -8,5 +8,6 @@ main.index
           .guests =  episode.data.guests
           .summary = episode.summary
         .actions
-          = link_to "Show Notes", episode
           = partial(:player, locals: {media_url: episode.data.media_url})
+          = link_to "Download", episode.data.media_url
+          = link_to "Show Notes", episode
