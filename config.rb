@@ -50,6 +50,10 @@ helpers do
     doc = Nokogiri::HTML::DocumentFragment.parse text
     escape_html(doc.text.gsub("\n", ""))
   end
+
+  def episodes
+    blog.articles.select {|a| a.data.media_url }
+  end
 end
 
 

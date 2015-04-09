@@ -14,7 +14,7 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
       xml.itunes :email, 'andrew@mootpointer.com'
     end
 
-    for episode in blog.articles
+    for episode in episodes
       xml.item do
         if episode.title
           xml.title episode.title
